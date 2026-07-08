@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="8" vgap="8" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.peptidosdb.ui.controller.EstabilidadClinicaTabController">
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints minWidth="180" prefWidth="180"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+    </columnConstraints>
+
+    <Label text="Estabilidad en suero" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="campoEstabilidadSuero" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+    <Label text="Estado clínico" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="comboEstadoClinico" GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+    <Label text="Toxicidad in vivo" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextArea fx:id="campoToxicidad" GridPane.rowIndex="2" GridPane.columnIndex="1" prefRowCount="4" wrapText="true"/>
+</GridPane>

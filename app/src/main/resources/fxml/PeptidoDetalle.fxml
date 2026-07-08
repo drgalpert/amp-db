@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.peptidosdb.ui.controller.PeptidoDetalleController"
+      prefWidth="640" prefHeight="560" minWidth="640">
+    <padding>
+        <Insets top="16" right="16" bottom="10" left="16"/>
+    </padding>
+
+    <Label fx:id="etiquetaTitulo" style="-fx-font-size: 15; -fx-font-weight: bold;"/>
+
+    <TabPane fx:id="tabPane" VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+
+        <Tab text="General" closable="false">
+            <GridPane hgap="8" vgap="8">
+                <padding>
+                    <Insets top="16" right="16" bottom="16" left="16"/>
+                </padding>
+                <columnConstraints>
+                    <ColumnConstraints minWidth="180" prefWidth="180"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                </columnConstraints>
+
+                <Label text="Nombre principal *" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoNombre" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                <Label text="Secuencia *" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoSecuencia" GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                <Label text="Peso molecular" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoPesoMolecular" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                <Label text="Carga neta" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoCargaNeta" GridPane.rowIndex="3" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                <Label text="Hidrofobicidad" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoHidrofobicidad" GridPane.rowIndex="4" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                <Label text="Es natural" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <CheckBox fx:id="checkEsNatural" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Estado de verificación *" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="comboEstadoVerificacion" GridPane.rowIndex="6" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                <Label text="UniProt ID" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoUniprotId" GridPane.rowIndex="7" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                <Label text="DRAMP ID" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoDrampId" GridPane.rowIndex="8" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                <Label text="Organismo fuente" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="comboOrganismo" GridPane.rowIndex="9" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+            </GridPane>
+        </Tab>
+
+        <Tab text="Nombres alternativos" closable="false">
+            <fx:include fx:id="nombresAltTab" source="NombresAlternativosTab.fxml"/>
+        </Tab>
+
+        <Tab text="Estructura" closable="false">
+            <fx:include fx:id="estructuraTab" source="EstructuraTab.fxml"/>
+        </Tab>
+
+        <Tab text="Estabilidad clínica" closable="false">
+            <fx:include fx:id="estabilidadTab" source="EstabilidadClinicaTab.fxml"/>
+        </Tab>
+
+        <Tab text="Modificaciones" closable="false">
+            <fx:include fx:id="modificacionesTab" source="ModificacionesTab.fxml"/>
+        </Tab>
+
+        <Tab text="Organismos blanco (MIC)" closable="false">
+            <fx:include fx:id="organismosTab" source="OrganismosBlancoTab.fxml"/>
+        </Tab>
+
+        <Tab text="Actividades" closable="false">
+            <fx:include fx:id="actividadesTab" source="ActividadesTab.fxml"/>
+        </Tab>
+
+        <Tab text="Publicaciones" closable="false">
+            <fx:include fx:id="publicacionesTab" source="PublicacionesTab.fxml"/>
+        </Tab>
+
+        <Tab text="Fuentes" closable="false">
+            <fx:include fx:id="fuentesTab" source="FuentesTab.fxml"/>
+        </Tab>
+
+    </TabPane>
+
+    <Label fx:id="etiquetaError" style="-fx-text-fill: red;" wrapText="true"/>
+
+    <HBox spacing="10">
+        <Button text="Guardar" onAction="#onGuardar" defaultButton="true"/>
+        <Button text="Cancelar" onAction="#onCancelar" cancelButton="true"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="8" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.peptidosdb.ui.controller.ModificacionesTabController">
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <HBox spacing="8">
+        <ComboBox fx:id="comboTipo" promptText="Tipo (ej. N-terminal)" prefWidth="160"/>
+        <TextField fx:id="campoPosicion" promptText="Posición / descripción..." HBox.hgrow="ALWAYS"/>
+        <Button text="Agregar" onAction="#onAgregar"/>
+    </HBox>
+
+    <ListView fx:id="listaModificaciones" VBox.vgrow="ALWAYS"/>
+
+    <Button text="Eliminar seleccionada" onAction="#onEliminar"/>
+</VBox>

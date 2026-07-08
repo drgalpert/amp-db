@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="12" fillWidth="false" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.peptidosdb.ui.controller.LoginController"
+      prefWidth="400" prefHeight="280">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Base de Datos de Péptidos Antimicrobianos" wrapText="true" textAlignment="CENTER"
+           maxWidth="340" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="campoUsuario" promptText="Usuario" prefWidth="260"/>
+    <PasswordField fx:id="campoPassword" promptText="Contraseña" prefWidth="260"/>
+
+    <Button text="Iniciar sesión" onAction="#onIniciarSesion" defaultButton="true"/>
+
+    <Label fx:id="etiquetaError" style="-fx-text-fill: red;" wrapText="true"/>
+</VBox>

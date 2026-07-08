@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="8" vgap="8" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.peptidosdb.ui.controller.EstructuraTabController">
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints minWidth="180" prefWidth="180"/>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+    </columnConstraints>
+
+    <Label text="Tipo de estructura" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="campoTipoEstructura" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+    <Label text="PDB ID" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="campoPdbId" GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+    <Label text="Método" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="campoMetodo" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+    <Label text="Ciclización" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="campoCiclizacion" GridPane.rowIndex="3" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+</GridPane>
