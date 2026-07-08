@@ -1,0 +1,24 @@
+# Java / Maven
+app/target/
+*.class
+ 
+# Local credentials (update before committing if they contain real, sensitive passwords)
+# app/src/main/resources/config/db.properties
+ 
+# Python
+etl/__pycache__/
+etl/*.pyc
+etl/.venv/
+etl/venv/
+etl/data/
+ 
+# IDE
+.idea/
+*.iml
+.vscode/
+nbproject/private/
+ 
+# Operating system
+.DS_Store
+Thumbs.db
+ 
